@@ -1,0 +1,25 @@
+.nav-bar{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    ul{
+        display: flex;
+        li{
+            margin: 0 20px;
+            cursor: pointer;
+        }
+    }
+    input{
+        width: 250px;
+        height: 35px;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 20px;
+        border: 2px solid rgb(86, 58, 200);
+        outline: none;
+        padding: 0 20px;
+        color: #fff;
+    }
+}
