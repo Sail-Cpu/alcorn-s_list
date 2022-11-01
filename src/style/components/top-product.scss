@@ -3,9 +3,14 @@
     height: 150px;
     padding: 20px;
     box-sizing: border-box;
+    transition: 0.2s ease-in-out;
+}
+.top-product-container:hover{
+    padding: 13px;
 }
 .top-product{
     background-color: #33353b;
+    cursor: pointer;
     text-align: center;
     width: 100%;
     height: 105%;
