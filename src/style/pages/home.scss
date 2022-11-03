@@ -1,11 +1,10 @@
-.home{
-    position: fixed;
+.page{
+    position: relative;
     float: right;
     padding-left: 169px;
     padding-right: 30px;
     box-sizing: border-box;
     width: 100%;
-    height: 100vh;
     .home-hero-banner{
         display: flex;
         justify-content: space-between;
@@ -30,7 +29,7 @@
                     box-sizing: border-box;
                     width: 100%;
                     height: 100%;
-                    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 25%, rgba(0, 0, 0, 0.9) 100%);
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 10%, rgba(0, 0, 0, 0.9) 100%);
                     border-top-left-radius: 40px;
                     border-bottom-left-radius: 40px;
                     display: flex;
@@ -105,6 +104,32 @@
                 div:hover{
                     padding: 0 20px;
                 }
+            }
+        }
+    }
+    .home-category-container{
+        display: flex;
+        margin: 50px 0px;
+        width: 100%;
+        .home-category{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .home-all-category{
+            width: 10%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            svg{
+                font-size: 50px;
+                color: #fff;
+                cursor: pointer;
+                transition: 0.5s ease-in-out;
+            }
+            svg:hover{
+                font-size: 60px;
             }
         }
     }

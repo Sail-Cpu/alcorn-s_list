@@ -22,7 +22,6 @@ const ApiFunction =  {
                     if(description[i] === '<' || description[i] === '>'){
                         alert = !alert;
                     }
-                    
                 }
             }
             return String + "...";

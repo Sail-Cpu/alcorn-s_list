@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 /* Api config */
 import { API_URL, API_KEY } from './config';
@@ -18,12 +17,20 @@ const apiSettings = {
         const endpoint = `${API_URL}games?key=${API_KEY}&page=${page}&genres=${genre}`
         return await (await axios(endpoint)).data.results;
     },
-    fetchGameByDeveloper: async (page, developer) => {
+    fetchGamesByDeveloper: async (page, developer) => {
         const endpoint = `${API_URL}games?key=${API_KEY}&page=${page}&developers=${developer}`
         return await (await axios(endpoint)).data.results;
     },
-    fetchGenres: async (page) => {
-        const endpoint = `${API_URL}genres?key=${API_KEY}&page=${page}`
+    fetchGenres: async () => {
+        const endpoint = `${API_URL}genres?key=${API_KEY}`
+        return await (await axios(endpoint)).data.results;
+    },
+    fetchDevelopers: async () => {
+        const endpoint = `${API_URL}developers?key=${API_KEY}`
+        return await (await axios(endpoint)).data.results;
+    },
+    fetchPlatforms: async () => {
+        const endpoint = `${API_URL}platforms?key=${API_KEY}`
         return await (await axios(endpoint)).data.results;
     }
 }

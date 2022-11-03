@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 /* Icon */
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
@@ -11,22 +12,39 @@ import GamesOutlinedIcon from '@mui/icons-material/GamesOutlined';
 import GamesIcon from '@mui/icons-material/Games';
 
 const NavBar = () => {
+
+   let pathname = window.location.pathname;
+
+    useEffect(() => {
+        pathname = window.location.pathname;
+    }, [window.location.pathname])
+
+    console.log(window.location.pathname)
+
     return(
         <div className="left-nav-bar">
-            <SportsEsportsIcon className="left-nav-logo" />
+            <Link to="/"><SportsEsportsIcon className="left-nav-logo" /></Link>
             <div className="left-nav-tab-container">
-                <div className="left-nav-tab">
-                    <CottageOutlinedIcon />
+                <Link to="/">
+                <div className="left-nav-tab" style={{backgroundColor: `${pathname === "/" ? '#0d82ec' : ''}`}}>
+                   <CottageOutlinedIcon/>
                 </div>
-                <div className="left-nav-tab">
-                    <WindowOutlinedIcon />
-                </div>
-                <div className="left-nav-tab">
-                    <IntegrationInstructionsOutlinedIcon />
-                </div>
-                <div className="left-nav-tab">
-                    <GamesOutlinedIcon />
-                </div>
+                </Link>
+                <Link to="/genres">
+                    <div className="left-nav-tab" style={{backgroundColor: `${pathname === "/genres" ? '#0d82ec' : ''}`}}>
+                        <WindowOutlinedIcon/>
+                    </div>
+                </Link>
+                <Link to="/developers">
+                    <div className="left-nav-tab">
+                        <IntegrationInstructionsOutlinedIcon />
+                    </div>
+                </Link>
+                <Link to="/platforms">
+                    <div className="left-nav-tab">
+                        <GamesOutlinedIcon /> 
+                    </div>
+                </Link>
             </div>
         </div>
     )

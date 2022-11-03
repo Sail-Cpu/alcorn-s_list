@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 /* Api */
 import Api from '../api/Api';
 import ApiFunction from "../api/ApiFunction";
 /* Components */
 import TopNavBar from "../components/navigation/TopNavBar";
+import Category from "../components/Category";
 /* Image */
 import OldGames from '../img/old-games.jpg';
 import NewGames from '../img/new-games.jpg';
-import { Key } from "@mui/icons-material";
+/* Icon */
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Home = () => {
 
     const[topGames, setTopGames] = useState([]);
-    const[gamesSelected, setGamesSelected] = useState();
+    const[selectedGames, setSelectedGames] = useState();
+    const[allGenres, setAllGenres] = useState([]);
 
+    /* Fetch Games */
     useEffect(() => {
         const fetchData = async () => {
             setTopGames(await Api.fetchGames(1, false));
@@ -21,31 +26,42 @@ const Home = () => {
         fetchData();
     }, [])
     
+    /* Fetch Selected Game */
     useEffect(() => {
         const fetchData = async () => {
             if(topGames.length !== 0){
-                setGamesSelected(await Api.fetchGame(topGames.at(0).id));
+                setSelectedGames(await Api.fetchGame(topGames.at(0).id));
             }
         }
         fetchData();
     }, [topGames])
 
+    useEffect(() => {
+        const fetchData = async () => {
+                setAllGenres(await Api.fetchGenres());
+        }
+        fetchData();
+    }, [])
+
+    /* Fetch Selected Game */
     const fetchData = async (id) => {
-        setGamesSelected(await Api.fetchGame(id));
+        setSelectedGames(await Api.fetchGame(id));
     }
 
+    console.log(selectedGames)
+
     return(
-        <div className="home">
+        <div className="page home">
             <TopNavBar />
             <div className="home-hero-banner">
                 <div className="top-games-container">
-                    <div className="top-games-img-container" style={{backgroundImage: `url(${gamesSelected ? gamesSelected.background_image : ''})`}}>
+                    <div className="top-games-img-container" style={{backgroundImage: `url(${selectedGames ? selectedGames.background_image : ''})`}}>
                         <div className="top-games-img">
                             <div className="top-games-img-contents">
-                                {gamesSelected &&
+                                {selectedGames &&
                                     <>
-                                        <h1 className="top-games-img-title">{gamesSelected.name}</h1>
-                                        <span>{ApiFunction.desc(gamesSelected.description, 290)}</span>
+                                        <h1 className="top-games-img-title">{selectedGames.name}</h1>
+                                        <span>{ApiFunction.desc(selectedGames.description, 290)}</span>
                                     </>     
                                 }
                             </div>
@@ -54,14 +70,11 @@ const Home = () => {
                     <div className="top-games-choose-container">
                         {ApiFunction.bestGames(topGames, 5).map((d, idx) => {    
                             return(
-                                <div className="top-games-choose"  key={idx}>
-                                    {gamesSelected &&
+                                <div className="top-games-choose" style={{border: `${idx !== 4 ? '' : 'none'}`}}  key={idx}>
+                                    {selectedGames &&
                                         <>
-                                            {idx != 4 
-                                            ?   <div style={{padding: `${d.id === gamesSelected.id ? '12px' : ''}`}} onClick={() => fetchData(d.id)}><span>{d.name}</span></div>
-                                            :   <div style={{padding: `${d.id === gamesSelected.id ? '12px' : ''}`, border: 'none'}} onClick={() => fetchData(d.id)}><span>{d.name}</span></div>}
-                                        </>
-                                                                         
+                                             <div style={{padding: `${d.id === selectedGames.id ? '12px' : ''}`}} onClick={() => fetchData(d.id)}><span>{d.name}</span></div>
+                                        </>                                
                                     }
                                 </div>  
                             )
@@ -81,6 +94,18 @@ const Home = () => {
                     </div>
                 </div>
             </div>   
+            <div className="home-category-container">
+                <div className="home-category">
+                    {ApiFunction.bestGames(allGenres, 5).map((genre, idx) => {
+                        return(
+                            <Category key={idx} name={genre.name} image={genre.image_background}/>
+                        )
+                    })}
+                </div>
+                <div className="home-all-category">
+                   <Link to="/genres"><ArrowForwardIcon /></Link> 
+                </div>
+            </div>
         </div>
     )
 }
