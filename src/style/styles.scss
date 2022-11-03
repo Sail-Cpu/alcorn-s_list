@@ -3,6 +3,7 @@
 /* Pages */
 @import url('./pages/home.scss');
 
-/* Components*/
-@import url('./components/nav-bar.scss');
-@import url('./components/top-product.scss');
+/* Components */
+    /* Navigation */
+    @import url('./components/navigation/left-nav-bar.scss');
+    @import url('./components/navigation/top-nav-bar.scss');

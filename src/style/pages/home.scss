@@ -1,54 +1,111 @@
-.hero-banner-img{
-    position: absolute;
-    z-index: -1;
-    top: 0;left: 0;
+.home{
+    position: fixed;
+    float: right;
+    padding-left: 169px;
+    padding-right: 30px;
+    box-sizing: border-box;
     width: 100%;
-    height: 800px;
-}
-.hero-banner-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    button{
-        margin-top: 40px;
-        padding: 20px 40px;
-        border-radius: 20px;
-        background-color: rgb(86, 58, 200);
-        color: #fff;
-        font-weight: 600;
-        font-size: 20px;
-        border: none;
-        cursor: pointer;
-    }
-    .arrow-box{
-        margin-top: 65px;
+    height: 100vh;
+    .home-hero-banner{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 5px;
-        border-radius: 50px;
-        background-color: rgba(0, 0, 0, 0.650);
-        cursor: pointer;
-    }
-    .arrow{
-        font-size: 50px;
-    }
-    .hero-banner{
-        margin-top: 120px;
-        width: 700px;
-        text-align: center;
-        h1{
-            font-size: 70px;
-            font-weight: 900;
-            margin: 0;
+        justify-content: space-between;
+        margin-top: 100px;
+        width: 100%;
+        height: 450px;
+        .top-games-container{
+            display: flex;
+            justify-content: space-between;
+            width: 69.2%;
+            height: 100%;
+            .top-games-img-container{
+                width: 65.2%;
+                height: 100%;
+                border-top-left-radius: 40px;
+                border-bottom-left-radius: 40px;
+                background-size: cover;
+                background-position: center;
+                color: #fff;
+                .top-games-img{
+                    padding: 20px;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 25%, rgba(0, 0, 0, 0.9) 100%);
+                    border-top-left-radius: 40px;
+                    border-bottom-left-radius: 40px;
+                    display: flex;
+                    align-items: flex-end;
+                    .top-games-img-contents{
+                        width: 100%;
+                        height: 40%;
+                    }
+                    .top-games-img-title{
+                        margin: 0;
+                        font-size: 30px;
+                        font-weight: 600;
+                    }
+                    span{
+                        font-size: 18px;
+                        color: rgb(231, 231, 231);
+                        font-family: Georgia, 'Times New Roman', Times, serif;
+                    }
+                }
+            }
+            .top-games-choose-container{
+                width: 34.2%;
+                height: 100%;
+                background-color: #292b31;
+                color: #fff;
+                .top-games-choose{
+                    width: 100%;
+                    height: 20%;
+                    border-bottom: 1px solid #fff;
+                    cursor: pointer;
+                    div{
+                        width: 100%;
+                        height: 100%; 
+                        padding: 0 20px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        transition: 0.5s ease-in-out;
+                    }
+                    div:hover{
+                        padding: 0px 12px;
+                    }
+                }
+            }
+        }
+        .new-old-games-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 29.2%;
+            height: 100%;
+            .new-old-games{
+                width: 100%;
+                height: 35%;
+                background-size: cover;
+                border-radius: 20px;
+                cursor: pointer;
+                div{
+                    width: 100%;
+                    height: 100%;
+                    background-color: #0000004e;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 30px;
+                    box-sizing: border-box;
+                    color: white;
+                    font-size: 25px;
+                    font-weight: 500;
+                    transition: 0.5s ease-in-out;
+                }
+                div:hover{
+                    padding: 0 20px;
+                }
+            }
         }
     }
-}
-
-.best-games-container{
-    margin-top: 200px;
-    margin-bottom: 100px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
 }

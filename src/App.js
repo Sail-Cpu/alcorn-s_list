@@ -2,12 +2,12 @@ import React from "react";
 /* Pages */
 import Home from "./pages/Home";
 /* Components */
-import NavBar from './components/navigation/NavBar';
+import LeftNavBar from './components/navigation/LeftNavBar';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <LeftNavBar />
       <Home />
     </div>
   );
