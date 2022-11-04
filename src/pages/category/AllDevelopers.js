@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 /* Api */
-import Api from '../api/Api';
+import Api from '../../api/Api';
 /* Components */
-import TopNavBar from "../components/navigation/TopNavBar";
-import Category from "../components/Category";
+import TopNavBar from "../../components/navigation/TopNavBar";
+import Category from "../../components/Category";
 
 const AllDevelopers = () => {
 
@@ -22,7 +22,7 @@ const AllDevelopers = () => {
             <div className="all-categories">
                 {allDevelopers.map((dev, idx) => {
                     return(
-                        <Category key={idx} name={dev.name} image={dev.image_background} />
+                        <Category key={idx} name={dev.slug} image={dev.image_background} type={"developer"}/>
                     )
                 })}
             </div>

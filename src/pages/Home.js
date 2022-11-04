@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 /* Api */
 import Api from '../api/Api';
-import ApiFunction from "../api/ApiFunction";
+import ApiFunction from "../api/function/ApiFunction";
 /* Components */
 import TopNavBar from "../components/navigation/TopNavBar";
 import Category from "../components/Category";
@@ -47,9 +47,7 @@ const Home = () => {
     const fetchData = async (id) => {
         setSelectedGames(await Api.fetchGame(id));
     }
-
-    console.log(selectedGames)
-
+    
     return(
         <div className="page home">
             <TopNavBar />
@@ -98,7 +96,7 @@ const Home = () => {
                 <div className="home-category">
                     {ApiFunction.bestGames(allGenres, 5).map((genre, idx) => {
                         return(
-                            <Category key={idx} name={genre.name} image={genre.image_background}/>
+                            <Category key={idx} name={genre.slug} image={genre.image_background} type={"genre"}/>
                         )
                     })}
                 </div>

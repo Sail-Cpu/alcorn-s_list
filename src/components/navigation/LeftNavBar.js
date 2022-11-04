@@ -19,8 +19,6 @@ const NavBar = () => {
         pathname = window.location.pathname;
     }, [window.location.pathname])
 
-    console.log(window.location.pathname)
-
     return(
         <div className="left-nav-bar">
             <Link to="/"><SportsEsportsIcon className="left-nav-logo" /></Link>

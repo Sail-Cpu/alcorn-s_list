@@ -1,6 +1,6 @@
 import axios from "axios";
 /* Api config */
-import { API_URL, API_KEY } from './config';
+import { API_URL, API_KEY } from './config/config';
 
 const apiSettings = {
     fetchGames: async (page, best) => {
@@ -13,12 +13,28 @@ const apiSettings = {
         const endpoint = `${API_URL}games/${id}?key=${API_KEY}`
         return await (await axios(endpoint)).data;
     },
+    fetchGenre: async (id) => {
+        const endpoint = `${API_URL}genres/${id}?key=${API_KEY}`
+        return await (await axios(endpoint)).data;
+    },
+    fetchDeveloper: async (id) => {
+        const endpoint = `${API_URL}developers/${id}?key=${API_KEY}`
+        return await (await axios(endpoint)).data;
+    },
+    fetchPlatform: async (id) => {
+        const endpoint = `${API_URL}platforms/${id}?key=${API_KEY}`
+        return await (await axios(endpoint)).data;
+    },
     fetchGamesByGenre: async (page, genre) => {
         const endpoint = `${API_URL}games?key=${API_KEY}&page=${page}&genres=${genre}`
         return await (await axios(endpoint)).data.results;
     },
     fetchGamesByDeveloper: async (page, developer) => {
         const endpoint = `${API_URL}games?key=${API_KEY}&page=${page}&developers=${developer}`
+        return await (await axios(endpoint)).data.results;
+    },
+    fetchGamesByPlatform: async (page, platform) => {
+        const endpoint = `${API_URL}games?key=${API_KEY}&page=${page}&platforms=${platform}`
         return await (await axios(endpoint)).data.results;
     },
     fetchGenres: async () => {

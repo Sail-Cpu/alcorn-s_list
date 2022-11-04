@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 /* Api */
-import Api from '../api/Api';
+import Api from '../../api/Api';
 /* Components */
-import TopNavBar from "../components/navigation/TopNavBar";
-import Category from "../components/Category";
+import TopNavBar from "../../components/navigation/TopNavBar";
+import Category from "../../components/Category";
 
 const AllPlatforms = () => {
 
@@ -22,7 +22,7 @@ const AllPlatforms = () => {
             <div className="all-categories">
                 {allPlatforms.map((platform, idx) => {
                     return(
-                        <Category key={idx} name={platform.name} image={platform.image_background} />
+                        <Category key={idx} name={platform.slug} image={platform.image_background} type={"platform"}/>
                     )
                 })}
             </div>

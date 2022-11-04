@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 /* Api */
-import Api from '../api/Api';
+import Api from '../../api/Api';
 /* Components */
-import TopNavBar from "../components/navigation/TopNavBar";
-import Category from "../components/Category";
+import TopNavBar from "../../components/navigation/TopNavBar";
+import Category from "../../components/Category";
 
 const AllGenres = () => {
 
@@ -22,7 +22,7 @@ const AllGenres = () => {
             <div className="all-categories">
                 {allGenres.map((genre, idx) => {
                     return(
-                        <Category key={idx} name={genre.name} image={genre.image_background} />
+                        <Category key={idx} name={genre.slug} image={genre.image_background} type={"genre"}/>
                     )
                 })}
             </div>
