@@ -19,7 +19,7 @@ function App() {
           <Route path="/genres" element={<AllGenres />}></Route>
           <Route path="/developers" element={<AllDevelopers />}></Route>
           <Route path="/platforms" element={<AllPlatforms />}></Route>
-          <Route path="/games/:type/:typeName" element={<Games />}></Route>
+          <Route path="/:type/:typeName" element={<Games />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

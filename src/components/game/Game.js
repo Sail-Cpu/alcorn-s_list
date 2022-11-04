@@ -21,22 +21,29 @@ const Game = (props) => {
         return <span style={{color: `red`}}>{(nb/10).toFixed(1)}</span>
     }
 
+    console.log(game)
+ 
     return(
-        <div className="game-container">
-            <div className="game">
-                <div className="game-info-container">
-                    <div className="game-img" style={{backgroundImage: `url(${props.image})`}}></div>
-                    <div className="game-info">
-                        <p>{props.name}</p>
-                        <p style={{fontSize: '14px', color: 'rgb(160, 160, 160)'}}>{game.developers?.[0].name}</p>
+            <div className="game-container">
+                <div className="game">
+                    <div className="game-info-container">
+                        <div className="game-img" style={{backgroundImage: `url(${props.image})`}}></div>
+                        <div className="game-info">
+                            <p>{props.name}</p>
+                            {game.developers?.length > 0 &&
+                            <>
+                                <p style={{fontSize: '14px', color: 'rgb(160, 160, 160)'}}>{game.developers?.[0].name}</p>
+                            </>
+                            }
+                            
+                        </div>
+                    </div>
+                    <div className="game-button-container">
+                        {rating(props.metacritic)}
+                        <button>See More</button>
                     </div>
                 </div>
-                <div className="game-button-container">
-                    {rating(props.metacritic)}
-                    <button>See More</button>
-                </div>
             </div>
-        </div>
     )
 }
 

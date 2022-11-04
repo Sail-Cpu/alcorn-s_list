@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 /* Icon */
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
@@ -19,30 +19,26 @@ const NavBar = () => {
         pathname = window.location.pathname;
     }, [window.location.pathname])
 
+    function color(isActive){
+        return {backgroundColor: isActive ? '#0d82ec' : '', Color: isActive ? '#fff' : 'rgb(125, 137, 156);'}
+    }
+
     return(
         <div className="left-nav-bar">
             <Link to="/"><SportsEsportsIcon className="left-nav-logo" /></Link>
             <div className="left-nav-tab-container">
-                <Link to="/">
-                <div className="left-nav-tab" style={{backgroundColor: `${pathname === "/" ? '#0d82ec' : ''}`}}>
-                   <CottageOutlinedIcon/>
-                </div>
-                </Link>
-                <Link to="/genres">
-                    <div className="left-nav-tab" style={{backgroundColor: `${pathname === "/genres" ? '#0d82ec' : ''}`}}>
+                <NavLink to="/" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
+                        <CottageOutlinedIcon/>          
+                </NavLink>
+                <NavLink to="/genres" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
                         <WindowOutlinedIcon/>
-                    </div>
-                </Link>
-                <Link to="/developers">
-                    <div className="left-nav-tab">
+                </NavLink>
+                <NavLink to="/developers" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
                         <IntegrationInstructionsOutlinedIcon />
-                    </div>
-                </Link>
-                <Link to="/platforms">
-                    <div className="left-nav-tab">
+                </NavLink>
+                <NavLink to="/platforms" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
                         <GamesOutlinedIcon /> 
-                    </div>
-                </Link>
+                </NavLink>
             </div>
         </div>
     )

@@ -35,12 +35,10 @@ const Games = () => {
                 setAllGames(await Api.fetchGamesByDeveloper(1, typeName));
             }else{
                 setAllGames(await Api.fetchGamesByPlatform(1, data.id));
-            }
+            }          
         }
         fetchData();
     }, [data])
-
-    console.log(data);
 
     return(
         <div className="page all-games-container">
