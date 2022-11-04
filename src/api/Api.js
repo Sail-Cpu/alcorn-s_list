@@ -9,6 +9,12 @@ const apiSettings = {
             : `${API_URL}games?key=${API_KEY}&page=${page}`;
         return await (await axios(endpoint)).data.results;
     },
+    fetchGamesByRelease: async (page, isNew) => {
+        const endpoint = isNew
+            ? `${API_URL}games?key=${API_KEY}&page=${page}&ordering=-released`
+            : `${API_URL}games?key=${API_KEY}&page=${page}&ordering=released`;
+        return await (await axios(endpoint)).data.results;
+    },
     fetchGame: async (id) => {
         const endpoint = `${API_URL}games/${id}?key=${API_KEY}`
         return await (await axios(endpoint)).data;

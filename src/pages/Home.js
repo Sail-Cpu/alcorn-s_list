@@ -85,16 +85,16 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="new-old-games-container">
-                            <div className="new-old-games" style={{backgroundImage: `url(${OldGames})`}}>
-                                <div className="">
+                            <Link className="new-old-games" to={`new-old/old`} style={{backgroundImage: `url(${OldGames})`}}>
+                                <div>
                                     Old Games
                                 </div>
-                            </div>
-                            <div className="new-old-games" style={{backgroundImage: `url(${NewGames})`}}>
-                                <div className="">
+                            </Link>
+                            <Link className="new-old-games" to={`new-old/new`} style={{backgroundImage: `url(${NewGames})`}}>
+                                <div>
                                     New Games
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>   
                     <div className="home-category-container">
