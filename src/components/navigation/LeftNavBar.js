@@ -20,7 +20,7 @@ const NavBar = () => {
     }, [window.location.pathname])
 
     function color(isActive){
-        return {backgroundColor: isActive ? '#0d82ec' : '', Color: isActive ? '#fff' : 'rgb(125, 137, 156);'}
+        return {backgroundColor: isActive ? '#0d82ec' : '', Color: isActive ? '#fff' : 'rgb(125, 137, 156)'}
     }
 
     return(

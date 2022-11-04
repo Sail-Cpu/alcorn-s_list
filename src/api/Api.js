@@ -37,6 +37,10 @@ const apiSettings = {
         const endpoint = `${API_URL}games?key=${API_KEY}&page=${page}&platforms=${platform}`
         return await (await axios(endpoint)).data.results;
     },
+    fetchGamesBySearch: async (search) => {
+        const endpoint = `${API_URL}games?key=${API_KEY}&search=${search}`
+        return await (await axios(endpoint)).data.results;
+    },
     fetchGenres: async () => {
         const endpoint = `${API_URL}genres?key=${API_KEY}`
         return await (await axios(endpoint)).data.results;

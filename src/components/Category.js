@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Category = (props) => {
     return(

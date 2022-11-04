@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+/* Api */
 import Api from '../../api/Api'
 
 const Game = (props) => {
@@ -20,8 +22,6 @@ const Game = (props) => {
         }
         return <span style={{color: `red`}}>{(nb/10).toFixed(1)}</span>
     }
-
-    console.log(game)
  
     return(
             <div className="game-container">
@@ -40,7 +40,9 @@ const Game = (props) => {
                     </div>
                     <div className="game-button-container">
                         {rating(props.metacritic)}
-                        <button>See More</button>
+                        <Link className="" to={`/game/${props.id}`}>
+                            <div>See More</div>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,5 @@
 
 const ApiFunction =  {
-
     bestGames(data, nb){
         let result = [];
         if(data.length !== 0){
@@ -13,20 +12,21 @@ const ApiFunction =  {
     },
     desc(description, nbMax){
         let String = "";
-        let alert = false;
         if(description.length > nbMax){
             for(let i = 0; i < nbMax; i++){
-                if(description[i] !== '<' && description[i] !== '>' && alert === false){
                     String += description[i];
-                }else{
-                    if(description[i] === '<' || description[i] === '>'){
-                        alert = !alert;
-                    }
-                }
             }
             return String + "...";
         }
         return description;
+    },
+    rating(nb){
+        if(nb >= 80){
+            return <span style={{color: `#50d150`}}>{(nb/10).toFixed(1)}</span>
+        }else if(nb < 80 && nb > 50){
+            return <span style={{color: `orange`}}>{(nb/10).toFixed(1)}</span>
+        }
+        return <span style={{color: `red`}}>{(nb/10).toFixed(1)}</span>
     }
 }
 

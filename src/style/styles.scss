@@ -3,6 +3,10 @@
 /* Pages */
 @import url('./pages/home.scss');
 @import url('./pages/all-categories.scss');
+@import url('./pages/all-games.scss');
+@import url('./pages/game-details.scss');
+@import url('./pages/search.scss');
+@import url('./pages//no-found-page.scss');
 
 /* Components */
     /* Navigation */
@@ -12,4 +16,5 @@
     @import url('./components/game.scss');
     /* Other */
     @import url('./components/category.scss');
-    @import url('./pages/all-games.scss');
+    @import url('./components/loading.scss')
+   

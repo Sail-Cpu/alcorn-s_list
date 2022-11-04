@@ -48,7 +48,10 @@
             align-items: flex-end;
             font-size: 20px;
             font-weight: 600;
-            button{
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 width: 50%;
                 height: 100%;
                 border-radius: 20px;
@@ -59,7 +62,7 @@
                 transition: 0.3s ease-in-out;
                 cursor: pointer;
             }
-            button:hover{
+            a:hover{
                 font-size: 19px;
             }
         }
