@@ -3,10 +3,17 @@ const ApiFunction =  {
     bestGames(data, nb){
         let result = [];
         if(data.length !== 0){
-            for(let i = 0; i < nb; i++){
-                result.push(data[i]);
+            if(data.length >= nb){
+                for(let i = 0; i < nb; i++){
+                    result.push(data[i]);
+                }
+                return result;
+            }else{
+                for(let i = 0; i < data.length; i++){
+                    result.push(data[i]);
+                }
+                return result;
             }
-            return result;
         }
         return [];
     },

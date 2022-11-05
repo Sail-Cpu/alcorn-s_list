@@ -19,6 +19,14 @@ const apiSettings = {
         const endpoint = `${API_URL}games/${id}?key=${API_KEY}`
         return await (await axios(endpoint)).data;
     },
+    fetchScreenshot: async (id) => {
+        const endpoint = `${API_URL}games/${id}/screenshots?key=${API_KEY}`
+        return await (await axios(endpoint)).data.results;
+    },
+    fetchTrailers: async (id) => {
+        const endpoint = `${API_URL}games/${id}/movies?key=${API_KEY}`
+        return await (await axios(endpoint)).data.results;
+    },
     fetchGenre: async (id) => {
         const endpoint = `${API_URL}genres/${id}?key=${API_KEY}`
         return await (await axios(endpoint)).data;

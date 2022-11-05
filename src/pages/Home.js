@@ -24,8 +24,7 @@ const Home = () => {
     useEffect(() => {
         setLoading(true);
         const fetchData = async () => {
-            setTopGames(await Api.fetchGames(1, false));
-            
+            setTopGames(await Api.fetchGames(1, false));  
         }
         fetchData();
     }, [])

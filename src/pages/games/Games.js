@@ -6,6 +6,7 @@ import Api from '../../api/Api';
 import TopNavBar from "../../components/navigation/TopNavBar";
 import Game from "../../components/game/Game";
 import Loading from "../../components/other/Loading";
+import { Gavel } from "@mui/icons-material";
 
 const Games = () => {
 
@@ -64,7 +65,7 @@ const Games = () => {
                                 <div className="all-games-container">
                                     {allGames.map((game) => {
                                         return(
-                                            <Game id={game.id} name={game.name} image={game.background_image} metacritic={game.metacritic} dev={game.developers}/>
+                                            <Game key={game.id} id={game.id} name={game.name} image={game.background_image} metacritic={game.metacritic} dev={game.developers}/>
                                         )                            
                                     })} 
                                 </div> 
