@@ -26,7 +26,7 @@ const Search = () => {
                 <>
                     <div className="search-container" style={{backgroundImage: `url(${SearchImg})`}}>
                         <div>
-                            <input type="text" onChange={e => setInputValue(e.target.value)}></input>
+                            <input type="text" autoFocus onChange={e => setInputValue(e.target.value)}></input>
                         </div>
                     </div>
                     <div className="all-games-container">

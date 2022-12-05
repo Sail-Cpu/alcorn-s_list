@@ -9,7 +9,7 @@ import Loading from "../../components/other/Loading";
 const AllDevelopers = () => {
 
     const[allDevelopers, setAllDevelopers] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const[loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true);
@@ -17,7 +17,7 @@ const AllDevelopers = () => {
             setAllDevelopers(await Api.fetchDevelopers());
             setTimeout(() => {
                 setLoading(false);
-              }, 1500);
+            }, 1500);
         }
         fetchData();
     }, [])
@@ -30,8 +30,8 @@ const AllDevelopers = () => {
             ) : (
                     <div className="all-categories">
                         {allDevelopers.map((dev, idx) => {
-                            return(
-                                <Category key={idx} name={dev.slug} image={dev.image_background} type={"developer"}/>
+                                return(
+                                    <Category key={idx} name={dev.slug} image={dev.image_background} type={"developer"}/>
                                 )
                             })
                         }

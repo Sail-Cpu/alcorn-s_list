@@ -1,13 +1,13 @@
 .top-nav-bar{
     position: fixed;
-    left: 0;
+    left: 128px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 20px 30px 20px 169px;
+    padding: 20px 30px;
     background-color: #1f2128e0;
-    width: 100%;
+    width: -webkit-fill-available;
     .top-nav-bar-logo{
         width: 60px;
         height: 60px;

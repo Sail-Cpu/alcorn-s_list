@@ -54,16 +54,18 @@ const GameDetails = () => {
                                         <div className="game-details-hero-banner-right">{ApiFunction.desc(allData.description_raw, 1440)}</div>
                                     </div>
                                 </div>
-                                <div className="game-details-screens-container">      
-                                    {ApiFunction.bestGames(screen, 3).map(s => {
-                                        return(
-                                            <div key={s.id} className="game-details-screens">
-                                                <div style={{backgroundImage: `url(${s.image})`}}></div>
-                                            </div>
-                                        )
-                                    })}
-                                    
-                                </div>
+                                {screen.length > 0 &&
+                                    <div className="game-details-screens-container">      
+                                        {ApiFunction.bestGames(screen, 3).map(s => {
+                                            return(
+                                                <div key={s.id} className="game-details-screens">
+                                                    <div style={{backgroundImage: `url(${s.image})`}}></div>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                }
+                                
                                 {trailers.length > 0 &&
                                     <div className="game-details-trailers-container">
                                         <div className="game-details-trailers">
