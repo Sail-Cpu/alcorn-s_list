@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/alcorn-list/static/css/main.4d612f1c.css",
-    "main.js": "/alcorn-list/static/js/main.deff43c3.js",
+    "main.js": "/alcorn-list/static/js/main.1c51817a.js",
     "static/media/search.jpg": "/alcorn-list/static/media/search.cbbe7c41abeb51d96d9e.jpg",
     "static/media/new-games.jpg": "/alcorn-list/static/media/new-games.8362740d4b880ab196e3.jpg",
     "static/media/old-games.jpg": "/alcorn-list/static/media/old-games.2cc691dad667f2128e27.jpg",
     "index.html": "/alcorn-list/index.html",
     "main.4d612f1c.css.map": "/alcorn-list/static/css/main.4d612f1c.css.map",
-    "main.deff43c3.js.map": "/alcorn-list/static/js/main.deff43c3.js.map"
+    "main.1c51817a.js.map": "/alcorn-list/static/js/main.1c51817a.js.map"
   },
   "entrypoints": [
     "static/css/main.4d612f1c.css",
-    "static/js/main.deff43c3.js"
+    "static/js/main.1c51817a.js"
   ]
 }
