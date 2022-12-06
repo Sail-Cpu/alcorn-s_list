@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import SearchIcon from '@mui/icons-material/Search';
 
 const TopNavBar = () => {
 
@@ -13,6 +14,7 @@ const TopNavBar = () => {
         <div className="top-nav-bar">
             <input type="text" placeholder="Search..." onChange={routeChange}></input>
             <div className="top-nav-bar-logo"></div>
+            <div className="search-icon" onClick={() => routeChange()}><SearchIcon /></div>
         </div>
     )
 }

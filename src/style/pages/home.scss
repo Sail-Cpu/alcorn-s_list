@@ -4,7 +4,7 @@
     padding: 0 30px;
     box-sizing: border-box;
     width: -webkit-fill-available;
-    overflow: hidden;
+    overflow: overlay;
     height: 100vh;
     .home-hero-banner{
         display: flex;
@@ -48,6 +48,15 @@
                         font-size: 18px;
                         color: rgb(231, 231, 231);
                         font-family: Georgia, 'Times New Roman', Times, serif;
+                    }
+                    @media screen and (max-width: 830px) {
+                        .top-games-img-contents{
+                            display: flex;
+                            align-items: flex-end;
+                        }
+                        span{
+                            display: none;
+                        }
                     }
                 }
             }
@@ -115,7 +124,8 @@
         .home-category{
             width: 90%;
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .home-all-category{
             width: 10%;
@@ -146,6 +156,14 @@
                 display: none;
             }
             
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .page{
+        .home-hero-banner{
+            display: none;
         }
     }
 }

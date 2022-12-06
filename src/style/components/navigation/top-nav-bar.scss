@@ -1,4 +1,4 @@
-.top-nav-bar{
+.top-nav-bar{ 
     position: fixed;
     left: 128px;
     display: flex;
@@ -24,5 +24,28 @@
         outline: none;
         font-size: 20px;
         padding: 0 40px;
+    }
+    .search-icon{
+        display: none;
+        svg{
+          font-size: 40px;  
+        }
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 780px){
+    .top-nav-bar{
+        justify-content: flex-end;
+        .top-nav-bar-logo{
+            display: none;
+        }
+        input{
+            display: none;
+        }
+        .search-icon{
+            display: block;
+        }
     }
 }
