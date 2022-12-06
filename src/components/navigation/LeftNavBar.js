@@ -3,17 +3,15 @@ import { Link, NavLink } from "react-router-dom";
 /* Icon */
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
-import CottageIcon from '@mui/icons-material/Cottage';
 import WindowOutlinedIcon from '@mui/icons-material/WindowOutlined';
-import WindowIcon from '@mui/icons-material/Window';
 import IntegrationInstructionsOutlinedIcon from '@mui/icons-material/IntegrationInstructionsOutlined';
-import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
 import GamesOutlinedIcon from '@mui/icons-material/GamesOutlined';
-import GamesIcon from '@mui/icons-material/Games';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBar = () => {
 
-   let pathname = window.location.pathname;
+    let pathname = window.location.pathname;
+    const[toogleNav, setToogleNav] = useState(false);
 
     useEffect(() => {
         pathname = window.location.pathname;
@@ -24,23 +22,44 @@ const NavBar = () => {
     }
 
     return(
-        <div className="left-nav-bar">
-            <Link to="/"><SportsEsportsIcon className="left-nav-logo" /></Link>
-            <div className="left-nav-tab-container">
-                <NavLink to="/" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
-                        <CottageOutlinedIcon/>          
-                </NavLink>
-                <NavLink to="/genres" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
-                        <WindowOutlinedIcon/>
-                </NavLink>
-                <NavLink to="/developers" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
-                        <IntegrationInstructionsOutlinedIcon />
-                </NavLink>
-                <NavLink to="/platforms" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
-                        <GamesOutlinedIcon /> 
-                </NavLink>
+        <>
+            <div className="left-nav-bar">
+                <Link to="alcorn-s_list/"><SportsEsportsIcon className="left-nav-logo" /></Link>
+                <div className="left-nav-tab-container">
+                    <NavLink to="alcorn-s_list/" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
+                            <CottageOutlinedIcon/>          
+                    </NavLink>
+                    <NavLink to="alcorn-s_list/genres" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
+                            <WindowOutlinedIcon/>
+                    </NavLink>
+                    <NavLink to="alcorn-s_list/developers" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
+                            <IntegrationInstructionsOutlinedIcon />
+                    </NavLink>
+                    <NavLink to="alcorn-s_list/platforms" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
+                            <GamesOutlinedIcon /> 
+                    </NavLink>
+                </div>
             </div>
-        </div>
+            <div className="left-nav-toogle-menu-container">
+                <MenuIcon onClick={() => setToogleNav(!toogleNav)}/>
+                <div className="left-nav-toogle-menu" style={{display: toogleNav ? 'flex' : 'none'}}>
+                    <div className="toogle-menu-tab-container">
+                    <NavLink to="alcorn-s_list/" className="toogle-menu-tab">
+                        <span>Home</span>         
+                    </NavLink>
+                    <NavLink to="alcorn-s_list/genres" className="toogle-menu-tab">
+                        <span>Genres</span>         
+                    </NavLink>
+                    <NavLink to="alcorn-s_list/developers" className="toogle-menu-tab">
+                        <span>Developers</span>         
+                    </NavLink>
+                    <NavLink to="alcorn-s_list/platforms" className="toogle-menu-tab">
+                        <span>Platforms</span>         
+                    </NavLink>
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }
 

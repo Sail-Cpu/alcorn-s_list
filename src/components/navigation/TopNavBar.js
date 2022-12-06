@@ -6,7 +6,7 @@ const TopNavBar = () => {
 
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-        let path = `/search`; 
+        let path = `/alcorn-s_list/search`; 
         navigate(path);
     }
 
