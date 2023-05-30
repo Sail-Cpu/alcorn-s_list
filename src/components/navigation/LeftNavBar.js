@@ -44,16 +44,16 @@ const NavBar = () => {
                 <MenuIcon onClick={() => setToogleNav(!toogleNav)}/>
                 <div className="left-nav-toogle-menu" style={{display: toogleNav ? 'flex' : 'none'}}>
                     <div className="toogle-menu-tab-container">
-                    <NavLink to="alcorn-s_list/" className="toogle-menu-tab">
+                    <NavLink to="alcorn-s_list/" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
                         <span>Home</span>         
                     </NavLink>
-                    <NavLink to="alcorn-s_list/genres" className="toogle-menu-tab">
+                    <NavLink to="alcorn-s_list/genres" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
                         <span>Genres</span>         
                     </NavLink>
-                    <NavLink to="alcorn-s_list/developers" className="toogle-menu-tab">
+                    <NavLink to="alcorn-s_list/developers" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
                         <span>Developers</span>         
                     </NavLink>
-                    <NavLink to="alcorn-s_list/platforms" className="toogle-menu-tab">
+                    <NavLink to="alcorn-s_list/platforms" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
                         <span>Platforms</span>         
                     </NavLink>
                     </div>
