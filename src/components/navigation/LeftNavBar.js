@@ -26,16 +26,16 @@ const NavBar = () => {
             <div className="left-nav-bar">
                 <Link to="alcorn-s_list/"><SportsEsportsIcon className="left-nav-logo" /></Link>
                 <div className="left-nav-tab-container">
-                    <NavLink to="alcorn-s_list/" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
+                    <NavLink to="/" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
                             <CottageOutlinedIcon/>          
                     </NavLink>
-                    <NavLink to="alcorn-s_list/genres" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
+                    <NavLink to="/genres" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
                             <WindowOutlinedIcon/>
                     </NavLink>
-                    <NavLink to="alcorn-s_list/developers" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
+                    <NavLink to="/developers" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
                             <IntegrationInstructionsOutlinedIcon />
                     </NavLink>
-                    <NavLink to="alcorn-s_list/platforms" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
+                    <NavLink to="/platforms" className="left-nav-tab" style={({ isActive }) => (color(isActive))}>
                             <GamesOutlinedIcon /> 
                     </NavLink>
                 </div>
@@ -44,16 +44,16 @@ const NavBar = () => {
                 <MenuIcon onClick={() => setToogleNav(!toogleNav)}/>
                 <div className="left-nav-toogle-menu" style={{display: toogleNav ? 'flex' : 'none'}}>
                     <div className="toogle-menu-tab-container">
-                    <NavLink to="alcorn-s_list/" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
+                    <NavLink to="/" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
                         <span>Home</span>         
                     </NavLink>
-                    <NavLink to="alcorn-s_list/genres" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
+                    <NavLink to="/genres" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
                         <span>Genres</span>         
                     </NavLink>
-                    <NavLink to="alcorn-s_list/developers" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
+                    <NavLink to="/developers" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
                         <span>Developers</span>         
                     </NavLink>
-                    <NavLink to="alcorn-s_list/platforms" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
+                    <NavLink to="/platforms" className="toogle-menu-tab" onClick={() => setToogleNav(false)}>
                         <span>Platforms</span>         
                     </NavLink>
                     </div>

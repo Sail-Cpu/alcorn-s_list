@@ -84,12 +84,12 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="new-old-games-container">
-                            <Link className="new-old-games" to={`alcorn-s_list/new-old/old`} style={{backgroundImage: `url(${OldGames})`}}>
+                            <Link className="new-old-games" to={`/new-old/old`} style={{backgroundImage: `url(${OldGames})`}}>
                                 <div>
                                     Old Games
                                 </div>
                             </Link>
-                            <Link className="new-old-games" to={`alcorn-s_list/new-old/new`} style={{backgroundImage: `url(${NewGames})`}}>
+                            <Link className="new-old-games" to={`/new-old/new`} style={{backgroundImage: `url(${NewGames})`}}>
                                 <div>
                                     New Games
                                 </div>
@@ -105,7 +105,7 @@ const Home = () => {
                             })}
                         </div>
                         <div className="home-all-category">
-                        <Link to="alcorn-s_list/genres"><ArrowForwardIcon /></Link> 
+                        <Link to="/genres"><ArrowForwardIcon /></Link> 
                         </div>
                     </div>
                 </>

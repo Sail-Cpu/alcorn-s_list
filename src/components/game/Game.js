@@ -40,7 +40,7 @@ const Game = (props) => {
                     </div>
                     <div className="game-button-container">
                         {rating(props.metacritic)}
-                        <Link className="" to={`/alcorn-s_list/game/${props.id}`}>
+                        <Link className="" to={`/game/${props.id}`}>
                             <div>See More</div>
                         </Link>
                     </div>
